@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Store Price Finder — CompareX</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="brand-name">Compare<span>X</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="products.html"><i class="fa-solid fa-mobile-screen-button"></i> Products</a></li>
+      <li><a href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+      <li><a href="prices.html" class="active"><i class="fa-solid fa-tags"></i> Price Finder</a></li>
+      <li><a href="decision.html"><i class="fa-solid fa-brain"></i> Decision Maker</a></li>
+    </ul>
+  </header>
+
+  <!-- Page Header -->
+  <div style="padding: 3rem 1.5rem 1.5rem; max-width: 1160px; margin: 0 auto;">
+    <span class="badge badge-best-value" style="margin-bottom: 0.5rem;">Feature 03</span>
+    <h1 style="font-size: 2.2rem; font-weight: 800;">Cross-Store Price & Deal Finder</h1>
+    <p style="color: var(--text-dim);">Compare identical items across Amazon India, Flipkart, Croma, Reliance Digital, and Tata CLiQ to find the lowest checkout cost in Rupees (₹).</p>
+  </div>
+
+  <!-- Content -->
+  <main style="max-width: 1160px; margin: 0 auto; padding: 0 1.5rem;">
+    <!-- Switcher -->
+    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+      <label style="font-weight: 600; font-size: 0.88rem; color: #fff;"><i class="fa-solid fa-list-check" style="color: var(--c-amber-warm);"></i> Choose Product:</label>
+      <select id="productSelectPicker" class="glass-input" style="padding: 0.5rem 1.2rem; font-size: 0.88rem;">
+        <option value="sony-wh1000xm5">Sony WH-1000XM5 Wireless Headphones</option>
+        <option value="ps5-slim">PlayStation 5 Slim Console (Disc Edition)</option>
+        <option value="macbook-air-m3">Apple MacBook Air 13" (M3 Chip, 16GB RAM)</option>
+      </select>
+    </div>
+
+    <!-- Product Overview Widget -->
+    <div class="price-overview-card" style="padding: 2.2rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+      <img src="" id="productImage" style="width: 160px; height: 160px; object-fit: contain; border-radius: var(--radius-inner); background: rgba(0,0,0,0.25); padding: 1rem;" alt="Product">
+      <div style="flex: 1;">
+        <h2 id="productTitle" style="font-size: 1.5rem; margin-bottom: 0.4rem; color: #fff;"></h2>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">
+          Official Manufacturer MRP: <span id="productMSRP" style="text-decoration: line-through; color: var(--c-rose-rust); font-weight: 600;"></span>
+        </p>
+
+        <!-- Savings banner -->
+        <div class="savings-card" id="savingsBanner" style="padding: 1.2rem; margin-top: 1.2rem;"></div>
+      </div>
+    </div>
+
+    <!-- Price Alert Tool Widget -->
+    <div class="alert-panel" style="padding: 1.2rem 1.8rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fa-solid fa-bell" style="color: var(--c-amber-warm);"></i>
+        <strong style="font-size: 0.9rem; color: #fff;">Set Price Drop Notification (₹):</strong>
+      </div>
+      <input type="number" id="targetPriceInput" class="glass-input" style="width: 190px;" placeholder="Target price e.g. 24999">
+      <button class="search-btn" id="setAlertBtn" style="padding: 0.55rem 1.4rem; font-size: 0.82rem;">
+        Enable Alert <i class="fa-solid fa-bolt"></i>
+      </button>
+    </div>
+
+    <!-- Store Comparison Table -->
+    <div class="section-title-wrap" style="text-align: left; margin-bottom: 1rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 700;">Merchant Comparison Breakdown</h3>
+      <p style="color: var(--text-dim); font-size: 0.88rem;">Calculates final checkout price inclusive of shipping fees and stock status.</p>
+    </div>
+    <div class="comparison-table-wrapper" id="storesTable"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+        <div class="brand-name">Compare<span>X</span></div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 CompareX. Real-time multi-store price intelligence.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/prices.js"></script>
+</body>
+</html>

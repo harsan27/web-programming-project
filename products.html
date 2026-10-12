@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Comparison Matrix — CompareX</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="brand-name">Compare<span>X</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="products.html" class="active"><i class="fa-solid fa-mobile-screen-button"></i> Products</a></li>
+      <li><a href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+      <li><a href="prices.html"><i class="fa-solid fa-tags"></i> Price Finder</a></li>
+      <li><a href="decision.html"><i class="fa-solid fa-brain"></i> Decision Maker</a></li>
+    </ul>
+  </header>
+
+  <!-- Page Header -->
+  <div style="padding: 3rem 1.5rem 1.5rem; max-width: 1160px; margin: 0 auto;">
+    <span class="badge" style="background: rgba(237, 158, 89, 0.15); color: var(--c-amber-warm); margin-bottom: 0.5rem;">Feature 01</span>
+    <h1 style="font-size: 2.2rem; font-weight: 800;">Product Comparison Matrix</h1>
+    <p style="color: var(--text-dim);">Select multiple gadgets to compare detailed hardware specifications and dynamic AI scores side-by-side.</p>
+  </div>
+
+  <!-- Product Picker Drawer Widget -->
+  <div class="selection-drawer" style="max-width: 1160px; margin: 0 auto 2.5rem;">
+    <h3 style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Click to Add/Remove from Comparison:</h3>
+    <div class="selectors-row" id="selectorsContainer"></div>
+  </div>
+
+  <!-- Main Comparison Area -->
+  <main class="comp-container">
+    <!-- Controls Panel Widget -->
+    <div class="controls-panel" style="padding: 1.2rem 1.8rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <label for="priorityFilter" style="font-size: 0.88rem; font-weight: 600;"><i class="fa-solid fa-sliders" style="color: var(--c-amber-warm);"></i> Optimize Winner For:</label>
+        <select id="priorityFilter" class="glass-input" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          <option value="balanced">Balanced All-Rounder</option>
+          <option value="gaming">Heavy Gaming & Performance</option>
+          <option value="camera">Photography & Video</option>
+          <option value="battery">Maximum Battery Endurance</option>
+          <option value="value">Best Value for Price</option>
+        </select>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-left: auto;">
+        <label for="budgetRange" style="font-size: 0.88rem; font-weight: 600;"><i class="fa-solid fa-wallet" style="color: var(--c-amber-warm);"></i> Budget Filter:</label>
+        <input type="range" id="budgetRange" min="40000" max="150000" step="5000" value="150000">
+        <span id="budgetValue" style="font-weight: 700; color: var(--c-amber-warm); min-width: 75px;">₹1,50,000</span>
+      </div>
+    </div>
+
+    <!-- AI Decision Explainer Box -->
+    <div class="ai-box" id="aiRecommendationBox"></div>
+
+    <!-- Top Column Cards -->
+    <div class="comp-columns" id="comparisonCards"></div>
+
+    <!-- Detailed Specs Table -->
+    <div class="section-title-wrap" style="text-align: left; margin-top: 2rem; margin-bottom: 1rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 700;">Side-by-Side Spec Breakdown</h3>
+      <p style="color: var(--text-dim); font-size: 0.88rem;">Comprehensive breakdown of hardware, dimensions, and battery life.</p>
+    </div>
+    <div class="comparison-table-wrapper" id="specsTable"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+        <div class="brand-name">Compare<span>X</span></div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 CompareX. Precision product decision architecture.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+</body>
+</html>

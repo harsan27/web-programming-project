@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Movie Comparison Matrix — CompareX</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="brand-name">Compare<span>X</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="products.html"><i class="fa-solid fa-mobile-screen-button"></i> Products</a></li>
+      <li><a href="movies.html" class="active"><i class="fa-solid fa-film"></i> Movies</a></li>
+      <li><a href="prices.html"><i class="fa-solid fa-tags"></i> Price Finder</a></li>
+      <li><a href="decision.html"><i class="fa-solid fa-brain"></i> Decision Maker</a></li>
+    </ul>
+  </header>
+
+  <!-- Header -->
+  <div style="padding: 3rem 1.5rem 1.5rem; max-width: 1160px; margin: 0 auto;">
+    <span class="badge" style="background: rgba(102, 34, 73, 0.4); color: var(--c-blush-cream); margin-bottom: 0.5rem;">Feature 02</span>
+    <h1 style="font-size: 2.2rem; font-weight: 800;">Multi-Movie Comparison Matrix</h1>
+    <p style="color: var(--text-dim);">Compare multiple movies simultaneously across critical ratings, runtimes, cast, and strengths.</p>
+  </div>
+
+  <!-- Movie Picker Drawer Widget -->
+  <div class="selection-drawer" style="max-width: 1160px; margin: 0 auto 2.5rem;">
+    <h3 style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Click to Add/Remove Movies in Comparison:</h3>
+    <div class="selectors-row" id="moviePickersContainer"></div>
+  </div>
+
+  <!-- Controls & Comparison Area -->
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 1.5rem;">
+    <!-- Mood Preference Bar Widget -->
+    <div class="controls-panel" style="padding: 1.2rem 1.8rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+      <label style="font-size: 0.88rem; font-weight: 600; color: #fff;">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--c-amber-warm);"></i> Prioritize Recommendation For:
+      </label>
+      <select id="movieMoodPref" class="glass-input" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+        <option value="ratings">Highest IMDb & Audience Score</option>
+        <option value="critics">Rotten Tomatoes Critical Acclaim</option>
+        <option value="shorter">Shorter Runtime (Fast Casual Watch)</option>
+        <option value="action">High-Octane Action & Pacing</option>
+      </select>
+    </div>
+
+    <!-- AI Explainer Box -->
+    <div class="ai-box" id="aiMovieBox"></div>
+
+    <!-- Multi-Column Movie Comparison Grid -->
+    <div class="comp-grid-movies" id="movieCardsContainer"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+        <div class="brand-name">Compare<span>X</span></div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 CompareX. Multi-movie evaluation & cinema recommender.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/movies.js"></script>
+</body>
+</html>

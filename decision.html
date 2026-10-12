@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Decision Maker — CompareX</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="brand-name">Compare<span>X</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="products.html"><i class="fa-solid fa-mobile-screen-button"></i> Products</a></li>
+      <li><a href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+      <li><a href="prices.html"><i class="fa-solid fa-tags"></i> Price Finder</a></li>
+      <li><a href="decision.html" class="active"><i class="fa-solid fa-brain"></i> Decision Maker</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Header -->
+  <main>
+    <section class="hero" style="padding-bottom: 2rem;">
+      <div class="hero-pill">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Custom Constraint & AI Reasoner Hub
+      </div>
+      <h1>Make Any Decision.<br><span class="gradient-text">With Your Own Constraints.</span></h1>
+      <p class="hero-sub">
+        Ask any dilemma, enter your choices, and define exactly what factors and weights matter to you. The AI evaluates every option and provides a transparent rationale.
+      </p>
+    </section>
+
+    <!-- Centralized Multi-Step Decision Form -->
+    <div class="decision-hub-wrap">
+      
+      <!-- Step 1: Define Decision Question -->
+      <div class="mirror-card step-card">
+        <div class="step-badge">Step 1</div>
+        <h2 class="step-title">What is your decision or dilemma?</h2>
+        <p class="step-desc">Enter the specific choice you are trying to make.</p>
+        
+        <input type="text" id="decisionQuestion" class="glass-input" style="width: 100%; font-size: 1.05rem;" 
+               placeholder="e.g. Which city should I visit for my next vacation? or Which job offer to take?" 
+               value="Which laptop should I purchase for university coding and long battery life?">
+      </div>
+
+      <!-- Step 2: Add Competing Options -->
+      <div class="mirror-card step-card">
+        <div class="step-badge">Step 2</div>
+        <h2 class="step-title">What are the available options?</h2>
+        <p class="step-desc">Add each alternative you are considering.</p>
+
+        <div style="display: flex; gap: 0.6rem; margin-bottom: 1rem;">
+          <input type="text" id="optionInput" class="glass-input" style="flex: 1;" placeholder="Enter an option (e.g. MacBook Air M3, Bali, Company A)...">
+          <button id="addOptionBtn" class="search-btn" style="padding: 0.6rem 1.4rem;">
+            <i class="fa-solid fa-plus"></i> Add Option
+          </button>
+        </div>
+
+        <div class="option-chip-row" id="optionsContainer">
+          <!-- Dynamic options chips injected here -->
+        </div>
+      </div>
+
+      <!-- Step 3: Define Custom Constraints & Weights -->
+      <div class="mirror-card step-card">
+        <div class="step-badge">Step 3</div>
+        <h2 class="step-title">Define Custom Constraints & Weights</h2>
+        <p class="step-desc">Add only the factors relevant to your question (e.g. Price, Fun, Learning curve, Distance, Battery) and adjust how heavily each factor should weigh.</p>
+
+        <!-- Form to Add a Custom Constraint -->
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 1.1rem; margin-bottom: 1.5rem;">
+          <label style="font-size: 0.82rem; color: var(--c-blush-cream); display: block; margin-bottom: 0.5rem; font-weight: 600;">
+            <i class="fa-solid fa-plus-circle" style="color: var(--c-amber-warm);"></i> Add a New Custom Constraint Factor:
+          </label>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+            <input type="text" id="constraintNameInput" class="glass-input" style="flex: 1; min-width: 200px;" 
+                   placeholder="Constraint name (e.g. Cost, Portability, Career Growth, Fun Factor)...">
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 0.82rem; color: var(--text-dim);">Weight:</span>
+              <input type="range" id="constraintWeightInput" class="constraint-slider" style="width: 110px;" min="5" max="100" value="70">
+              <span id="constraintWeightValPreview" style="font-size: 0.82rem; font-weight: 700; color: var(--c-amber-warm); min-width: 38px;">70%</span>
+            </div>
+
+            <button id="addConstraintBtn" class="search-btn" style="padding: 0.55rem 1.2rem; font-size: 0.82rem;">
+              <i class="fa-solid fa-plus"></i> Add Factor
+            </button>
+          </div>
+        </div>
+
+        <!-- Rendered Dynamic Constraints Grid -->
+        <h4 style="font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 0.8rem;">
+          Active Decision Constraints & Priority Weight Sliders:
+        </h4>
+        <div class="constraint-grid" id="constraintsContainer">
+          <!-- Dynamically populated custom constraint cards -->
+        </div>
+
+        <!-- Optional User Context Notes -->
+        <div style="margin-top: 1.6rem;">
+          <label style="font-size: 0.85rem; color: var(--text-dim); display: block; margin-bottom: 0.4rem;">
+            Personal notes or edge cases for the AI (Optional):
+          </label>
+          <textarea id="userContext" class="glass-input" rows="2" style="width: 100%; resize: vertical;" 
+                    placeholder="e.g. I travel often on planes so size and battery matter most to me..."></textarea>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <button id="analyzeBtn" class="search-btn" style="padding: 0.85rem 2.8rem; font-size: 1.05rem; margin: 0 auto; box-shadow: 0 8px 30px rgba(237, 158, 89, 0.4);">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Run AI Analysis & Explain Reason
+        </button>
+      </div>
+
+      <!-- Result Card (Initially Hidden) -->
+      <div id="decisionResultCard" class="mirror-card step-card" style="display: none; border-color: var(--c-amber-warm); box-shadow: 0 0 35px rgba(237, 158, 89, 0.3);">
+        <div id="resultBody"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+        <div class="brand-name">Compare<span>X</span></div>
+      </div>
+      <p style="color: var(--text-dim); font-size: 0.85rem;">
+        Multi-criteria decision intelligence and custom constraint analysis.
+      </p>
+      <div class="footer-copy">
+        &copy; 2026 CompareX. Precision comparison platform.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/decision.js"></script>
+</body>
+</html>

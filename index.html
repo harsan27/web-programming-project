@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompareX — Smart Decision & Comparison Engine</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Hero Feature Metric Grid */
+    .hero-stats-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+      padding: 0 1.5rem;
+    }
+    .stat-pill-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-inner);
+      padding: 1.1rem 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .stat-pill-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+    }
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--c-amber-primary);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Island -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="brand-name">Compare<span>X</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="products.html"><i class="fa-solid fa-mobile-screen-button"></i> Products</a></li>
+      <li><a href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+      <li><a href="prices.html"><i class="fa-solid fa-tags"></i> Price Finder</a></li>
+      <li><a href="decision.html"><i class="fa-solid fa-brain"></i> Decision Maker</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-pill">
+        <i class="fa-solid fa-bolt" style="color: var(--c-amber-primary);"></i> Real-Time Multi-Dimensional Analysis Engine
+      </div>
+      <h1>Compare Options.<br><span class="gradient-text">Make Confident Decisions.</span></h1>
+      <p class="hero-sub">
+        Side-by-side gadget benchmarks, cinema match scores, live Indian store pricing in ₹, and weighted multi-constraint AI decisions.
+      </p>
+
+      <!-- Global Search Pill -->
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color: var(--c-amber-primary); margin-right: 0.75rem;"></i>
+          <input type="text" id="mainSearchInput" placeholder="Search phones (e.g. iPhone 15 Pro), films, or type a dilemma...">
+          <button class="search-btn" id="mainSearchBtn">
+            Explore <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats Bar -->
+    <div class="hero-stats-banner">
+      <div class="stat-pill-card">
+        <div class="stat-number">6+ Flagships</div>
+        <div class="stat-label">Multi-Spec Benchmarks</div>
+      </div>
+      <div class="stat-pill-card">
+        <div class="stat-number">5 Indian Stores</div>
+        <div class="stat-label">Live INR (₹) Price Feeds</div>
+      </div>
+      <div class="stat-pill-card">
+        <div class="stat-number">IMDb + RT</div>
+        <div class="stat-label">Cinema Match Scoring</div>
+      </div>
+      <div class="stat-pill-card">
+        <div class="stat-number">Custom Weights</div>
+        <div class="stat-label">AI Neural Reasoner</div>
+      </div>
+    </div>
+
+    <!-- Category Grid with Enhanced Visual Cards -->
+    <section class="categories-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Explore Intelligence Suites</h2>
+        <p class="section-sub">Select a category below to test algorithms and discover data-driven winners.</p>
+      </div>
+
+      <div class="category-grid">
+        <!-- Card 1: Product Comparison -->
+        <div class="cat-card">
+          <div class="cat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Product Matrix</h3>
+          <p>Multi-device hardware spec showdowns. Dynamically weight performance, camera, battery, and value in ₹.</p>
+          <ul class="cat-features">
+            <li>Compare unlimited smartphones & laptops</li>
+            <li>Interactive budget slider in Indian Rupees</li>
+            <li>Dynamic match index & AI winner rationale</li>
+          </ul>
+          <a href="products.html" class="btn-card">Launch Product Matrix <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Card 2: Movie Comparison -->
+        <div class="cat-card">
+          <div class="cat-icon"><i class="fa-solid fa-film"></i></div>
+          <h3>Cinema Matcher</h3>
+          <p>Multi-movie evaluator cross-referencing IMDb scores, Rotten Tomatoes critical consensus, and runtimes.</p>
+          <ul class="cat-features">
+            <li>Compare multiple movies together</li>
+            <li>Audience vs Critical rating breakdown</li>
+            <li>Custom mood recommendations for tonight</li>
+          </ul>
+          <a href="movies.html" class="btn-card">Match Movies <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Card 3: Price Finder -->
+        <div class="cat-card">
+          <div class="cat-icon"><i class="fa-solid fa-tags"></i></div>
+          <h3>Cross-Store Deals (India)</h3>
+          <p>Live merchant pricing across Amazon India, Flipkart, Croma, Reliance Digital, and Tata CLiQ with delivery fees.</p>
+          <ul class="cat-features">
+            <li>All checkout prices calculated in ₹</li>
+            <li>Highlights lowest total price + verified stock</li>
+            <li>Direct merchant links & price-drop alert tool</li>
+          </ul>
+          <a href="prices.html" class="btn-card">Check Live Deals <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Card 4: AI Decision Maker -->
+        <div class="cat-card" style="border-color: rgba(255, 158, 67, 0.45); box-shadow: 0 10px 30px rgba(255, 158, 67, 0.15);">
+          <div class="cat-icon" style="background: linear-gradient(135deg, rgba(255, 158, 67, 0.3), rgba(255, 59, 105, 0.25));"><i class="fa-solid fa-brain"></i></div>
+          <h3>AI Decision Maker</h3>
+          <p>Centralized dilemma solver. Enter any question, candidate options, and your own personalized custom constraints.</p>
+          <ul class="cat-features">
+            <li>User-defined dynamic constraint sliders</li>
+            <li>Algorithmic option ranking matrix</li>
+            <li>Transparent neural rationale justification</li>
+          </ul>
+          <a href="decision.html" class="btn-card" style="background: linear-gradient(135deg, var(--c-amber-primary), var(--c-rose-neon)); color: #090812;">Try Decision Hub <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+        <div class="brand-name">Compare<span>X</span></div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="products.html">Products</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="prices.html">Deals</a></li>
+        <li><a href="decision.html">Decision Hub</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; 2026 CompareX. Smart comparison & recommendation architecture.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
